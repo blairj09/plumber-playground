@@ -1,0 +1,54 @@
+---
+title: "Interacting with Plumber APIs from within R"
+output: html_notebook
+---
+
+```{r setup}
+# Packages ----
+library(magrittr)
+library(httr)
+library(crul)
+library(jqr)
+```
+
+
+This notebook outlines using `httr` and `crul` to interact with `plumber` APIs being served locally.
+
+## httr
+```{r}
+httr_resp <- GET("localhost:5762/echo?msg=Hi%20there", 
+                 user_agent("James Blair"))
+
+httr_resp <- GET("localhost:5762/echo?msg=Hi%20there")
+
+content(httr_resp, as = "text") %>% 
+  jq()
+
+rawToChar(httr_resp$content) %>% 
+  jq()
+```
+
+
+## crul
+```{r}
+plumber_client <- HttpClient$new(
+  url = "localhost:5762",
+  headers = list(
+    USER_AGENT = "crul James"
+  )
+)
+
+crul_resp <- plumber_client$get("echo",
+                   query = list(msg = "Hi there from crul"))
+
+crul_resp$parse() %>% 
+  jq()
+
+rawToChar(crul_resp$content) %>% 
+  jq()
+```
+
+
+
+
+

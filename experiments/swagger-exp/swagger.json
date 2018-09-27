@@ -1,0 +1,76 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API Description",
+    "title": "Plumber Example API",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1:5762",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/echo": {
+      "get": {
+        "summary": " Echo back the input",
+        "responses": {
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": [
+          {
+            "name": "msg",
+            "description": "The message to echo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": null
+      }
+    },
+    "/plot": {
+      "get": {
+        "summary": " Plot a histogram",
+        "responses": {
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": [],
+        "tags": null
+      }
+    },
+    "/sum": {
+      "post": {
+        "summary": " Return the sum of two numbers",
+        "responses": {
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": [
+          {
+            "name": "b",
+            "description": "The second number to add",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "a",
+            "description": "The first number to add",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": null
+      }
+    }
+  }
+}

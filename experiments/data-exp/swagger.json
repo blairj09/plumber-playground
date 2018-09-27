@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API Description",
+    "title": "Data API",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1:5762",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/data": {
+      "post": {
+        "summary": " Return an HTML table of the input data",
+        "responses": {
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Request body (json)",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": null
+      }
+    }
+  }
+}

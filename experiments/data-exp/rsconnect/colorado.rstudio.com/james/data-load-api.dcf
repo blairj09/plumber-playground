@@ -1,0 +1,13 @@
+name: data-load-api
+title: data-load-api
+username: james
+account: james
+server: colorado.rstudio.com
+hostUrl: http://colorado.rstudio.com/rsc/__api__
+appId: 1400
+bundleId: 15043
+url: http://colorado.rstudio.com:80/rsc/content/1400/
+when: 1534919638.30595
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: entrypoint.R|mtcars.json|swagger.json
