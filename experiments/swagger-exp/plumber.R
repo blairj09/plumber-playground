@@ -24,7 +24,10 @@ function(req) {
 
 #* Filter to practice preempt
 #* @filter fail
-function() {
+function(req) {
+  if (grepl("swagger", tolower(req$PATH_INFO))) {
+    forward()
+  }
   list(
     msg = "You didn't make it"
   )
